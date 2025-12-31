@@ -1,6 +1,6 @@
 # Engineering Rules for OpenCode
 
-OpenCode reads the agent-sandboxes skill from `.claude/skills/` automatically. This file documents how to use the skill with OpenCode's custom command system.
+This file documents how to use the agent-sandboxes skill with OpenCode's custom command system.
 
 ## Custom Commands
 
@@ -10,7 +10,7 @@ OpenCode uses `/command-name` syntax (instead of Claude's `\command-name`). All 
 
 | Command | Description | Usage |
 |---------|-------------|-------|
-| `/prime` | Initialize project context and load skills | `/prime` |
+| `/prime` | Initialize project context and understand skills | `/prime` |
 | `/generic-browser-test <url> <plan_file> [parallel] [headed]` | Browser UI testing | `/generic-browser-test https://example.com plan.md false true` |
 
 ### Agent Sandboxes Commands
@@ -27,10 +27,12 @@ OpenCode uses `/command-name` syntax (instead of Claude's `\command-name`). All 
 
 ## How Commands Work
 
-Each command:
-1. Uses the `use_skill` tool to load the `agent-sandboxes` skill from `.claude/skills/agent-sandboxes/SKILL.md`
-2. Reads the corresponding prompt file from `.claude/skills/agent-sandboxes/prompts/`
-3. Executes the workflow with the provided arguments
+Each command instructs the agent to:
+1. Read the skill documentation at `.claude/skills/agent-sandboxes/SKILL.md`
+2. Read the corresponding prompt file from `.claude/skills/agent-sandboxes/prompts/`
+3. Execute the workflow with the provided arguments
+
+This approach works with any OpenCode agent configuration, including oh-my-opencode.
 
 ## Command Mapping
 
@@ -44,18 +46,14 @@ Each command:
 | `/agent-sandboxes-test` | `prompts/test.md` |
 | `/agent-sandboxes-browser-testing` | `prompts/browser-testing.md` |
 
-## Skill Discovery
+## Key Files
 
-OpenCode automatically discovers skills in these locations:
-- `.opencode/skill/<name>/SKILL.md` (project-specific)
-- `~/.opencode/skill/<name>/SKILL.md` (global)
-- `.claude/skills/<name>/SKILL.md` (Claude-compatible)
-
-The agent-sandboxes skill is located at `.claude/skills/agent-sandboxes/SKILL.md` and is automatically discovered by OpenCode.
+- **Skill Documentation**: `.claude/skills/agent-sandboxes/SKILL.md` - Main reference for sandbox operations
+- **Sandbox CLI**: `.claude/skills/agent-sandboxes/sandbox_cli/` - Python CLI for E2B sandbox operations
+- **Workflow Prompts**: `.claude/skills/agent-sandboxes/prompts/` - Detailed workflow instructions
 
 ## Configuration
 
 See `opencode.json` in the project root for OpenCode-specific configuration including:
-- Tool permissions (bash, skill, etc.)
+- Tool permissions (bash, edit, etc.)
 - Permission settings
-
