@@ -204,7 +204,7 @@ uv run sbx sandbox pause <sandbox_id>
 # Extend sandbox lifetime (adds time to remaining)
 uv run sbx sandbox extend-lifetime <sandbox_id> 3600    # Add 1 hour
 uv run sbx sandbox extend-lifetime <sandbox_id> 10800   # Add 3 hours
-uv run sbx sandbox extend-lifetime <sandbox_id> 43200   # Add 12 hours
+uv run sbx sandbox extend-lifetime <sandbox_id> 3600    # Add 1 hour
 
 # Kill sandbox (only if explicitly requested)
 uv run sbx sandbox kill <sandbox_id>

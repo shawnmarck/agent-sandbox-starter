@@ -49,7 +49,7 @@ SANDBOX_CLI_PATH: `temp/<WORKFLOW_ID>/`
 
 1. **Initialize Sandbox**
    - Change to SANDBOX_CLI_PATH directory
-   - Run `uv run sbx init --template claude-node22-python-sqlite --timeout 43200 --name [WORKFLOW_ID]` to create a new sandbox with the optimized template
+   - Run `uv run sbx init --template claude-node22-python-sqlite --timeout 3600 --name [WORKFLOW_ID]` to create a new sandbox with the optimized template
    - The template includes: Node.js 22, npm, uv, sqlite3 (all pre-installed and globally accessible)
    - This stores the WORKFLOW_ID in the sandbox metadata for tracking
    - Capture the sandbox ID from the output (format: `sbx_abc123def456`)

@@ -10,7 +10,7 @@ Upload a local application directory to a new E2B sandbox, read the README to un
 ## Variables
 
 APP_LOCAL_DIR: $ARGUMENTS
-SANDBOX_TIMEOUT: 43200 (static default)
+SANDBOX_TIMEOUT: 3600 (static default)
 
 ## Instructions
 

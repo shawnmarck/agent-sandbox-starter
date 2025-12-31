@@ -12,7 +12,7 @@ This skill provides access to E2B sandboxes through a streamlined CLI for safe c
 - **E2B_API_KEY**: The environment variable containing the E2B API key (stored in the environment file)
 - **SANDBOX_CLI_PATH**: `.claude/skills/agent-sandboxes/sandbox_cli/`
 - **ENVIRONMENT_FILE_PATH**: `../../../../.env`
-- **TIMEOUT_DURATION_IN_SECONDS**: `43200` (12 hours)
+- **TIMEOUT_DURATION_IN_SECONDS**: `3600` (1 hour)
 
 ## Prerequisites
 
@@ -381,7 +381,7 @@ uv run sbx sandbox extend-lifetime <sandbox_id> 3600
 uv run sbx sandbox extend-lifetime <sandbox_id> 10800
 
 # Add 12 hours
-uv run sbx sandbox extend-lifetime <sandbox_id> 43200
+uv run sbx sandbox extend-lifetime <sandbox_id> 3600
 ```
 
 The `extend-lifetime` command **adds** the specified seconds to the remaining lifetime. If a sandbox has 30m left and you add 1h, it will have 1h 30m remaining.

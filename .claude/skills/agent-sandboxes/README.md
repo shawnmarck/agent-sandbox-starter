@@ -3,9 +3,6 @@
 An agent skill for managing isolated execution environments using [E2B Sandboxes](https://e2b.dev/). 
 This skill enables AI agents (Gemini CLI, Claude Code, Codex CLI) to safely execute code, build full-stack applications, and perform arbitrary engineering tasks in a secure, isolated sandbox.
 
-Watch the [Gemini 3 Demo](https://youtu.be/V5IhsHEHXOg) or the newer [Claude Opus 4.5](https://youtu.be/3kgx0YxCriM) Demo to understand what this codebase/skill can do for your agentic coding. 
-
-<img src="images/sandboxes.png" alt="Agent Sandboxes" width="800">
 
 ## Why Use Agent Sandboxes? The **Value Proposition**
 > 
@@ -68,107 +65,6 @@ Watch the [Gemini 3 Demo](https://youtu.be/V5IhsHEHXOg) or the newer [Claude Opu
     \plan-build-host-test <prompt> <workflow_id>
     ```
 
-## Starter Prompts
-
-The `prompts/{claude,gemini,codex}/<difficulty>_<task>.md` contain full stack application prompts you can
-
-Try these prompts out with a SOTA Model for the best results.
-
-Run these prompts in your Agentic Coding Tool.
-
-Start with the Very Easy Prompts to get a feel for the tool. Keep in mind token usage increases as the complexity of the prompt increases.
-
-### Very Easy Prompts
-
-```bash
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_easy_guestbook.md)" "very_easy_guestbook"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_easy_url_shortener.md)" "very_easy_url_shortener"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/very_easy_counter.md)" "very_easy_counter"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/very_easy_poll_maker.md)" "very_easy_poll_maker"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/very_easy_calculator.md)" "very_easy_calculator"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/very_easy_counter.md)" "very_easy_counter"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/very_easy_greeter.md)" "very_easy_greeter"
-```
-
-### Easy Prompts
-
-```bash
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_api_mock_studio.md)" "easy_api_mock_studio"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_code_snippet_manager.md)" "easy_code_snippet_manager"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_cron_heartbeat_monitor.md)" "easy_cron_heartbeat_monitor"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_markdown_knowledge_base.md)" "easy_markdown_knowledge_base"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_offline_task_board.md)" "easy_offline_task_board"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/easy_schema_visualizer.md)" "easy_schema_visualizer"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_nano_banana_simple.md)" "easy_nano_banana_simple"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_notes_app.md)" "easy_notes_app"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_sqlite_crud.md)" "easy_sqlite_crud"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_todo_list.md)" "easy_todo_list"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_chart_sketch.md)" "easy_chart_sketch"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_decision_matrix.md)" "easy_decision_matrix"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/easy_design_system_palette.md)" "easy_design_system_palette"
-```
-
-### Medium Prompts
-
-```bash
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/medium_knowledge_base_curator.md)" "medium_knowledge_base_curator"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/medium_devops_dashboard.md)" "medium_devops_dashboard"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/medium_investment_tracker.md)" "medium_investment_tracker"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/medium_log_analysis_tool.md)" "medium_log_analysis_tool"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/gemini/medium_planning_poker.md)" "medium_planning_poker"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/opus45/medium_elevenlabs_live_transcription_app.md)" "medium_elevenlabs_live_transcription_app"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_file_explorer.md)" "medium_file_explorer"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_habit_tracker.md)" "medium_habit_tracker"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_nano_banana_generator.md)" "medium_nano_banana_generator"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_personal_finance.md)" "medium_personal_finance"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_recipe_planner.md)" "medium_recipe_planner"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/medium_chart_sketch_pro.md)" "medium_chart_sketch_pro"
-```
-
-### Hard Prompts
-
-```bash
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/hard_incident_response_notebook.md)" "hard_incident_response_notebook"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/hard_learning_cohort_orchestrator.md)" "hard_learning_cohort_orchestrator"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/hard_supplier_quality_portal.md)" "hard_supplier_quality_portal"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/hard_ui_design_review_platform.md)" "hard_ui_design_review_platform"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_api_testing.md)" "hard_api_testing"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_code_snippets.md)" "hard_code_snippets"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_content_workflow.md)" "hard_content_workflow"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_freelancer_manager.md)" "hard_freelancer_manager"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_nano_banana_studio.md)" "hard_nano_banana_studio"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/hard_time_tracking.md)" "hard_time_tracking"
-```
-
-### Very Hard Prompts
-
-```bash
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_hard_analytics_ops_monitoring_hub.md)" "very_hard_analytics_ops_monitoring_hub"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_hard_iot_fleet_maintenance_console.md)" "very_hard_iot_fleet_maintenance_console"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_hard_micro_betting_odds_lab.md)" "very_hard_micro_betting_odds_lab"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_hard_personal_investing_allocator.md)" "very_hard_personal_investing_allocator"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/codex/very_hard_scriptwriter_automation_workbench.md)" "very_hard_scriptwriter_automation_workbench"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/very_hard_knowledge_base.md)" "very_hard_knowledge_base"
-\agent-sandboxes:plan-build-host-test "$(cat prompts/full_stack/sonnet/very_hard_system_monitor.md)" "very_hard_system_monitor"
-```
-
-## 3 Browser Testing Prompts
-
-> after you host your app via public url, you can test it with the browser testing prompts.
-
-```bash
-# Claude Code only - requires subagent support (parallel=true, headed=true)
-/generic-browser-test https://www.anthropic.com/news/claude-opus-4-5 prompts/browser-workflows/opus-4-5-release.md true true
-
-# Sandbox app browser tests (replace <URL> with actual sandbox URL)
-/generic-browser-test <URL> prompts/browser-workflows/easy_chart_sketch_browser_test.md true true
-/generic-browser-test <URL> prompts/browser-workflows/easy_decision_matrix_browser_test.md true true
-/generic-browser-test <URL> prompts/browser-workflows/easy_design_system_palette_browser_test.md true true
-/generic-browser-test <URL> prompts/browser-workflows/medium_chart_sketch_pro_browser_test.md true true
-
-# For other agentic coding tools, make sure subagents is false
-\generic-browser-test <URL> prompts/browser-workflows/easy_chart_sketch_browser_test.md false true
-```
 
 ## 🤖 "Reprogrammed" BACKSLASH Commands
 
@@ -212,12 +108,3 @@ uv run sbx --help
 *   [Skill Definition & Guide](.claude/skills/agent-sandboxes/SKILL.md)
 *   [CLI README](.claude/skills/agent-sandboxes/sandbox_cli/README.md)
 *   [E2B Documentation](https://e2b.dev/docs)
-
-
-## Master **Agentic Coding**
-> Prepare for the future of software engineering
-
-Learn tactical agentic coding patterns with [Tactical Agentic Coding](https://agenticengineer.com/tactical-agentic-coding?y=agsbxsk)
-
-Follow the [IndyDevDan YouTube channel](https://www.youtube.com/@indydevdan) to improve your agentic coding advantage.
-
