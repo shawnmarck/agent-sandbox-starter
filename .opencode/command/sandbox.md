@@ -2,6 +2,10 @@
 description: Small general sandbox operations. Adhoc prompt with minimal compute usage.
 ---
 
-Please use the `use_skill` tool to load the `agent-sandboxes` skill, then read and execute the workflow from `.claude/skills/agent-sandboxes/prompts/sandbox.md` with the following user request:
+Please execute sandbox operations by following these steps:
 
-$ARGUMENTS
+1. Read the skill documentation at `.claude/skills/agent-sandboxes/SKILL.md`
+
+2. Read the workflow prompt at `.claude/skills/agent-sandboxes/prompts/sandbox.md`
+
+3. Execute the workflow with this user request: $ARGUMENTS

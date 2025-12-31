@@ -2,6 +2,10 @@
 description: Generates a detailed implementation plan with Browser UI Testing workflows
 ---
 
-Please use the `use_skill` tool to load the `agent-sandboxes` skill, then read and execute the workflow from `.claude/skills/agent-sandboxes/prompts/plan-full-stack.md` with the following user prompt:
+Please generate a full-stack implementation plan by following these steps:
 
-$ARGUMENTS
+1. Read the skill documentation at `.claude/skills/agent-sandboxes/SKILL.md`
+
+2. Read the workflow prompt at `.claude/skills/agent-sandboxes/prompts/plan-full-stack.md`
+
+3. Execute the workflow with this user prompt: $ARGUMENTS
