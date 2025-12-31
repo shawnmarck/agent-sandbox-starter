@@ -6,7 +6,14 @@ OpenCode reads the agent-sandboxes skill from `.claude/skills/` automatically. T
 
 OpenCode uses `/command-name` syntax (instead of Claude's `\command-name`). All commands are defined in `.opencode/command/` directory.
 
-### Available Commands
+### General Commands
+
+| Command | Description | Usage |
+|---------|-------------|-------|
+| `/prime` | Initialize project context and load skills | `/prime` |
+| `/generic-browser-test <url> <plan_file> [parallel] [headed]` | Browser UI testing | `/generic-browser-test https://example.com plan.md false true` |
+
+### Agent Sandboxes Commands
 
 | Command | Description | Usage |
 |---------|-------------|-------|
