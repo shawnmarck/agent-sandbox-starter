@@ -2,6 +2,8 @@
 
 A starter template for Claude Code projects with E2B sandbox integration and custom skills.
 
+> **Attribution**: This project template is based on [agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill/) by [@disler](https://github.com/disler). The original repository provided the foundation for the E2B sandbox integration and skill structure.
+
 ## What's Included
 
 This template provides:
@@ -75,11 +77,13 @@ Place commands in `.claude/commands/`:
 - E2B account (for sandbox features)
 - Claude Code / Gemini CLI / Codex CLI
 
-## License
+## Credits
 
-[Your License Here]
+This project template is based on the excellent work by:
+- **[@disler](https://github.com/disler)** - [agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill/) - Original E2B sandbox skill implementation
 
 ## Learn More
 
 - [E2B Documentation](https://e2b.dev/docs)
 - [Claude Code Documentation](https://github.com/anthropics/claude-code)
+- [Original Agent Sandbox Skill](https://github.com/disler/agent-sandbox-skill/)
