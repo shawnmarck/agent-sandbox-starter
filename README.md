@@ -9,7 +9,7 @@ A starter template for AI coding agents with E2B sandbox integration and custom 
 This template provides:
 - **Agent Sandboxes Skill**: Safe, isolated code execution using E2B sandboxes
 - **Custom Commands**: Generic browser testing and prime/initialization commands
-- **Multi-Tool Support**: Instructions for Claude Code, Gemini CLI, Codex CLI, and OpenCode
+- **Multi-Tool Support**: Instructions for Claude Code, Gemini CLI, Codex CLI, and OpenCode _(OpenCode support is work in progress)_
 - **Ready-to-Use Structure**: `.claude/` folder with skills and commands pre-configured
 
 ## Quick Start
