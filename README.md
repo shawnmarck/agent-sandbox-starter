@@ -1,6 +1,6 @@
-# Claude Code Project Template
+# Agentic Project Template
 
-A starter template for Claude Code projects with E2B sandbox integration and custom skills.
+A starter template for AI coding agents with E2B sandbox integration and custom skills.
 
 > **Attribution**: This project template is based on [agent-sandbox-skill](https://github.com/disler/agent-sandbox-skill/) by [@disler](https://github.com/disler). The original repository provided the foundation for the E2B sandbox integration and skill structure.
 
@@ -9,7 +9,7 @@ A starter template for Claude Code projects with E2B sandbox integration and cus
 This template provides:
 - **Agent Sandboxes Skill**: Safe, isolated code execution using E2B sandboxes
 - **Custom Commands**: Generic browser testing and prime/initialization commands
-- **Multi-Tool Support**: Instructions for Claude Code, Gemini CLI, and Codex CLI
+- **Multi-Tool Support**: Instructions for Claude Code, Gemini CLI, Codex CLI, and OpenCode
 - **Ready-to-Use Structure**: `.claude/` folder with skills and commands pre-configured
 
 ## Quick Start
@@ -30,7 +30,10 @@ This template provides:
 
 3. **Start using**:
    ```bash
-   claude  # or gemini, or codex
+   claude    # Claude Code
+   opencode  # OpenCode
+   gemini    # Gemini CLI
+   codex     # Codex CLI
    ```
 
 ## Skills & Commands
@@ -40,9 +43,14 @@ Run code, build apps, and execute commands in isolated E2B sandboxes.
 
 **Documentation**: See `.claude/skills/agent-sandboxes/SKILL.md` for full details
 
-**Quick commands**:
-- `\sandbox <prompt>` - Ad-hoc sandbox operations
-- `\agent-sandboxes:plan-build-host-test <prompt> <workflow_id>` - Full app lifecycle
+**Quick commands** (syntax varies by tool):
+
+| Tool | Sandbox Command | Full Workflow Command |
+|------|-----------------|----------------------|
+| Claude Code | `\sandbox <prompt>` | `\agent-sandboxes:plan-build-host-test <prompt> <id>` |
+| OpenCode | `/sandbox <prompt>` | `/agent-sandboxes-plan-build-host-test <prompt> <id>` |
+| Gemini CLI | `\sandbox <prompt>` | `\agent-sandboxes:plan-build-host-test <prompt> <id>` |
+| Codex CLI | `\sandbox <prompt>` | `\agent-sandboxes:plan-build-host-test <prompt> <id>` |
 
 ### Custom Commands
 - `/prime` - Initialize and understand the project
@@ -60,13 +68,18 @@ Place new skills in `.claude/skills/<skill-name>/`:
 ```
 
 ### Add New Commands
-Place commands in `.claude/commands/`:
+
+**For Claude/Gemini/Codex** - Place in `.claude/commands/`:
 - Single file: `.claude/commands/<command>.md`
 - Nested: `.claude/commands/<category>/<command>.md`
 
+**For OpenCode** - Place in `.opencode/command/`:
+- Single file: `.opencode/command/<command>.md`
+
 ## Tool-Specific Instructions
 
-- **CLAUDE.md**: Claude Code-specific instructions
+- **CLAUDE.md**: Claude Code-specific instructions (backslash commands)
+- **OPENCODE.md**: OpenCode-specific instructions (custom commands)
 - **AGENTS.md**: General agent instructions
 - **GEMINI.md**: Gemini CLI-specific instructions
 
@@ -75,7 +88,7 @@ Place commands in `.claude/commands/`:
 - Python >= 3.12
 - `uv` package manager (for sandbox CLI)
 - E2B account (for sandbox features)
-- Claude Code / Gemini CLI / Codex CLI
+- Claude Code / OpenCode / Gemini CLI / Codex CLI
 
 ## Credits
 
@@ -86,4 +99,5 @@ This project template is based on the excellent work by:
 
 - [E2B Documentation](https://e2b.dev/docs)
 - [Claude Code Documentation](https://github.com/anthropics/claude-code)
+- [OpenCode Documentation](https://opencode.ai/docs)
 - [Original Agent Sandbox Skill](https://github.com/disler/agent-sandbox-skill/)
