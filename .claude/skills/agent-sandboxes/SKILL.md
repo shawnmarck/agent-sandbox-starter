@@ -1,11 +1,61 @@
 ---
-name: Agent Sandboxes
-description: Operate E2B agent sandboxes using the CLI. Use when user needs to run code in isolation, test packages, execute commands safely, or work with binary files in a sandbox environment. Keywords: sandbox, e2b, isolated environment, run code, test code, safe execution.
+name: agent-sandboxes
+description: Operate E2B agent sandboxes using the CLI. Use when user needs to run code in isolation, test packages, execute commands safely, or work with binary files in a sandbox environment. Keywords: sandbox, e2b, isolated environment, run code, test code, safe execution, sisyphus, subagent, opencode, glm-4.7.
+compatibility:
+  - opencode: "1.0+"
+  - claude-code: "1.0+"
 ---
 
-# Agent Sandboxes
+# Agent Sandboxes for OpenCode & Claude Code
 
 This skill provides access to E2B sandboxes through a streamlined CLI for safe code execution and file operations in isolated environments.
+
+## OpenCode Integration
+
+### Automatic Sandbox Usage with Sisyphus (GLM-4.7)
+
+When using Sisyphus (GLM-4.7) with Oh My OpenCode, this skill automatically wraps code execution in E2B sandboxes for maximum security:
+
+1. **Complete Isolation**: All code runs in cloud E2B environment, never locally
+2. **Commercial-Grade Security**: Zero risk to local filesystem, processes, or network
+3. **Multi-Agent Safety**: Each subagent gets unique sandbox ID, no conflicts
+4. **Automatic Cleanup**: Sandboxes auto-terminate after timeout (1 hour default)
+
+### When Sisyphus Should Use Sandboxes
+
+**ALWAYS use E2B sandboxes for**:
+- ✅ Running arbitrary code (user scripts, API calls, testing)
+- ✅ Installing packages or dependencies
+- ✅ Building applications
+- ✅ Executing shell commands
+- ✅ Running tests
+- ✅ Browser automation
+- ✅ Parallel subagent execution
+
+**Use LOCAL filesystem for**:
+- ✅ Git operations (commit, push, pull)
+- ✅ Editing documentation
+- ✅ Configuration changes (.env, .opencode.json)
+- ✅ Reading local project files for analysis
+
+### OpenCode Permission Configuration
+
+**No special permissions needed** - E2B provides isolation at infrastructure level.
+
+OpenCode remains in normal/secure mode (no `bash: "allow"` permissive mode required).
+
+### How Sisyphus Delegates to Subagents
+
+When Sisyphus launches subagents (Librarian, Explore, Oracle), it passes sandbox context:
+
+```markdown
+Sandbox ID: sbx_abc123def456
+Sandbox CLI Path: .claude/skills/agent-sandboxes/sandbox_cli/
+
+Use this sandbox for all code execution, file operations, and testing.
+```
+
+Each subagent tracks its own sandbox ID independently - no shared state or conflicts.
 
 ## Variables
 
