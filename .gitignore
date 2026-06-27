@@ -73,6 +73,8 @@ out/
 # IDEs and Editors
 .vscode/
 .idea/
+.cursor/
+agent-transcripts/
 *.swp
 *.swo
 *~

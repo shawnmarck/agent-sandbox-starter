@@ -5,8 +5,8 @@ description = "E2B Sandbox CLI - Control sandboxes from the command line"
 readme = "README.md"
 requires-python = ">=3.12"
 dependencies = [
-    "e2b>=2.6.4",
-    "click>=8.1.7",
+    "e2b>=2.30.0",
+    "click>=8.4.0",
     "python-dotenv>=1.0.0",
     "rich>=13.7.0",
 ]
